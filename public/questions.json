@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is Harry Potter's Birthday?",
+    "answers": [
+      {
+        "answer": "July 31st",
+        "isCorrect": true
+      },
+      {
+        "answer": "June 31st"
+      },
+      {
+        "answer": "October 31st"
+      }
+    ]
+  },
+  {
+    "question": "What spell creates light at the end of the wand?",
+    "answers": [
+      {
+        "answer": "Avada Kedavra"
+      },
+      {
+        "answer": "Lumos",
+        "isCorrect": true
+      },
+      {
+        "answer": "Expelliarmus"
+      }
+    ]
+  },
+  {
+    "question": "What Hogwarts House is famous for its sharp, witty students?",
+    "answers": [
+      {
+        "answer": "Hufflepuff"
+      },
+      {
+        "answer": "Slytherin"
+      },
+      {
+        "answer": "Ravenclaw",
+        "isCorrect": true
+      }
+    ]
+  }
+]

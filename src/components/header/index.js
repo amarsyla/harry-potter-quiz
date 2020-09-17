@@ -3,7 +3,7 @@ import './header.css';
 
 const Header = () => (
   <header className="header">
-    Harry Potter Quiz
+    Harry Potter Quiz <span role="img" aria-label="wizard icon">🧙</span>
   </header>
 );
 
