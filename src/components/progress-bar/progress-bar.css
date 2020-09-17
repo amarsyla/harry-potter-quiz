@@ -1,0 +1,23 @@
+.progress-bar__line {
+  position: relative;
+  height: 0.5rem;
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+  background-color: var(--color-theme);
+  border-radius: var(--border-radius-card);
+}
+
+.progress-bar__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-info);
+  transition: width 0.3s var(--easing);
+}
+
+.progress-bar__text {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}

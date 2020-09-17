@@ -1,10 +1,20 @@
 import React from 'react';
+import classNames from 'classnames';
+import './answer.css';
 
 const Answer = ({ answer }) => (
-  <div className="answer">
+  <button
+    type="button"
+    className={classNames(
+      'answer',
+      {
+        'is-success': false,
+        'is-error': false
+      }
+    )}
+  >
     {answer.answer}
-    {answer.isCorrect && ' (correct)'}
-  </div>
+  </button>
 );
 
 export default Answer;

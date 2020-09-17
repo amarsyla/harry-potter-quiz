@@ -1,6 +1,8 @@
 const actions = {
   FETCH_QUESTIONS: ({ dispatch }) => async () => {
     try {
+      // await new Promise(resolve => setTimeout(resolve, 2000)); // fake delay to see animations
+
       const payload = await fetch('/questions.json')
         .then((response) => {
             if (response.status !== 200) {

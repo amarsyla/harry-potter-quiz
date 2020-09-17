@@ -1,0 +1,15 @@
+.question {
+  text-align: center;
+}
+
+.question__title {
+  margin-top: 0;
+  margin-bottom: 3.2rem;
+}
+
+.question__answers {
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  margin: auto;
+}

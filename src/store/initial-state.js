@@ -1,6 +1,8 @@
 const initialState = {
   isLoading: false,
-  questions: []
+  questions: [],
+  activeQuestionIndex: 0,
+  notification: null
 };
 
 export default initialState;

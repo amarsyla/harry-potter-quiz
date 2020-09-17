@@ -4,7 +4,9 @@ import reducer from '../../store/reducer';
 import actions from '../../store/actions';
 import initialState from '../../store/initial-state';
 import Header from '../header';
+import Footer from '../footer';
 import Quiz from '../quiz';
+import './app.css';
 
 const App = () => {
   const [state, dispatch] = useReducerAsync(reducer, initialState, actions);
@@ -17,11 +19,21 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header />
+      <div className="app__inner">
+        <Header />
 
-      <br /><br />
+        <Quiz
+          isLoading={state.isLoading}
+          questions={state.questions}
+          activeQuestionIndex={state.activeQuestionIndex}
+        />
 
-      <Quiz questions={state.questions} />
+        <Footer
+          questions={state.questions}
+          activeQuestionIndex={state.activeQuestionIndex}
+          notification={state.notification}
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  min-height: 60rem;
+  padding: 4.8rem;
+  box-shadow: var(--box-shadow-large);
+  border-radius: var(--border-radius-card);
+  background-color: #fff;
+}

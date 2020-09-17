@@ -1,0 +1,17 @@
+:root {
+  --color-theme: #E7EAF0;
+  --color-theme-rgb: 231 234 240;
+  --color-success: #99D9A8;
+  --color-error: #FF4848;
+  --color-text: #2D3B78;
+  --color-text-success: #2A7241;
+  --color-text-error: #B30000;
+  --color-info: #4974F6;
+
+  --font-size-body: 1.6rem;
+
+  --border-radius-card: 0.5rem;
+  --box-shadow-large: 0 0 1rem rgba(0 0 0 / 0.1);
+
+  --easing: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
