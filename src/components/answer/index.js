@@ -10,13 +10,15 @@ const Answer = ({
   answerIndex,
   question,
   questionIndex,
-  submitAnswer
+  submitAnswer,
+  ...props
 }) => {
   const isAnswerCorrect = question.isSubmitted && answer.isCorrect === true;
   const isAnswerWrong = question.isSubmitted && answer.isCorrect !== true && answer.isSelected === true;
 
   return (
     <Button
+      {...props}
       className={classNames(
         'answer',
         {

@@ -13,7 +13,13 @@
   max-width: 50rem;
   min-height: 60rem;
   padding: 4.8rem;
-  box-shadow: var(--box-shadow-large);
-  border-radius: var(--border-radius-card);
   background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .app__inner {
+    box-shadow: var(--box-shadow-large);
+    border-radius: var(--border-radius-card);
+  }
 }

@@ -1,13 +1,7 @@
-.result {
-  text-align: center;
+.loader {
   opacity: 0;
   animation-name: fade-in;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
-}
-
-.result__icon {
-  display: block;
-  font-size: 4rem;
 }

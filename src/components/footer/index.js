@@ -5,6 +5,7 @@ import ProgressBar from '../progress-bar';
 import './footer.css';
 
 const Footer = ({
+  isCompleted,
   questions,
   activeQuestionIndex,
   notification
@@ -13,7 +14,7 @@ const Footer = ({
     return null;
   }
 
-  const progressValue = ((activeQuestionIndex + 1) / questions.length) * 100;
+  const progressValue = isCompleted ? 100 : ((activeQuestionIndex) / questions.length) * 100;
   const progressText = `${activeQuestionIndex + 1} / ${questions.length}`;
 
   return (
@@ -31,6 +32,7 @@ const Footer = ({
 };
 
 const mapState = state => ({
+  isCompleted: state.isCompleted,
   questions: state.questions,
   activeQuestionIndex: state.activeQuestionIndex,
   notification: state.notification

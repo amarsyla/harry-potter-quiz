@@ -9,6 +9,11 @@
 .question__title {
   margin-top: 0;
   margin-bottom: 3.2rem;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
 
 .question__answers {

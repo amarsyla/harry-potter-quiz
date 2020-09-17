@@ -24,6 +24,7 @@ const Quiz = ({
   return (
     <div className="quiz">
       <Question
+        key={activeQuestion.question}
         question={activeQuestion}
         questionIndex={activeQuestionIndex}
       />

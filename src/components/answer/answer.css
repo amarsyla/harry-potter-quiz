@@ -1,5 +1,11 @@
 .answer {
   margin-bottom: 1.6rem;
+  opacity: 0;
+  transform: translateX(2rem);
+  animation-name: fade-in-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: var(--easing);
 }
 
 .answer:last-child {

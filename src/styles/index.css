@@ -3,7 +3,14 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  html {
+    font-size: 10px;
+  }
 }
 
 body {
@@ -15,7 +22,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--font-size-body);
   color: var(--color-text);
-  background-color: rgba(var(--color-theme-rgb) / 0.25);
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    background-color: rgba(var(--color-theme-rgb) / 0.25);
+  }
 }
 
 code {
