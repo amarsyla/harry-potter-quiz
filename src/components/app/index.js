@@ -1,41 +1,40 @@
 import React, { useEffect } from 'react';
-import { useReducerAsync } from 'use-reducer-async';
-import reducer from '../../store/reducer';
-import actions from '../../store/actions';
-import initialState from '../../store/initial-state';
+import { connect } from 'react-redux';
+import { fetchQuestions } from '../../store/actions';
 import Header from '../header';
-import Footer from '../footer';
 import Quiz from '../quiz';
+import Footer from '../footer';
 import './app.css';
 
-const App = () => {
-  const [state, dispatch] = useReducerAsync(reducer, initialState, actions);
-
+const App = ({
+  questions,
+  fetchQuestions
+}) => {
   useEffect(() => {
-    dispatch({ type: 'FETCH_QUESTIONS' });
-  }, []); // eslint-disable-line
-
-  console.log(state);
+    if (questions.length === 0) {
+      fetchQuestions();
+    }
+  }, [questions.length, fetchQuestions]);
 
   return (
     <div className="app">
       <div className="app__inner">
         <Header />
 
-        <Quiz
-          isLoading={state.isLoading}
-          questions={state.questions}
-          activeQuestionIndex={state.activeQuestionIndex}
-        />
+        <Quiz />
 
-        <Footer
-          questions={state.questions}
-          activeQuestionIndex={state.activeQuestionIndex}
-          notification={state.notification}
-        />
+        <Footer />
       </div>
     </div>
   );
 }
 
-export default App;
+const mapState = state => ({
+  questions: state.questions
+});
+
+const mapDispatch = dispatch => ({
+  fetchQuestions: () => dispatch(fetchQuestions())
+});
+
+export default connect(mapState, mapDispatch)(App);

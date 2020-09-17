@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Notification from '../notification';
 import ProgressBar from '../progress-bar';
 import './footer.css';
@@ -29,4 +30,10 @@ const Footer = ({
   );
 };
 
-export default Footer;
+const mapState = state => ({
+  questions: state.questions,
+  activeQuestionIndex: state.activeQuestionIndex,
+  notification: state.notification
+});
+
+export default connect(mapState, null)(Footer);

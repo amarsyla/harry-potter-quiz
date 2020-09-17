@@ -1,29 +1,65 @@
-const actions = {
-  FETCH_QUESTIONS: ({ dispatch }) => async () => {
-    try {
-      // await new Promise(resolve => setTimeout(resolve, 2000)); // fake delay to see animations
+import sleep from '../helpers/sleep';
 
-      const payload = await fetch('/questions.json')
-        .then((response) => {
-            if (response.status !== 200) {
-              throw new Error(`Looks like there was a problem. Status Code: ${response.status}`);
-            }
+export const fetchQuestions = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: 'FETCH_QUESTIONS'
+    });
 
-            return response.json();
+    const questions = await fetch('/questions.json')
+      .then((response) => {
+          if (response.status !== 200) {
+            throw new Error(`Looks like there was a problem. Status Code: ${response.status}`);
           }
-        );
 
-      dispatch({
-        type: 'FETCH_QUESTIONS_SUCCESS',
-        payload
-      });
-    } catch (error) {
-      dispatch({
-        type: 'FETCH_QUESTIONS_ERROR',
-        error: error
-      });
-    }
+          return response.json();
+        }
+      );
+
+    await sleep(3000); // fake delay to see animations
+
+    dispatch({
+      type: 'FETCH_QUESTIONS_SUCCESS',
+      questions
+    });
+  } catch (error) {
+    dispatch({
+      type: 'FETCH_QUESTIONS_ERROR',
+      error
+    });
   }
 };
 
-export default actions;
+export const submitAnswer = (questionIndex, answerIndex, isAnswerCorrect) => async (dispatch) => {
+  try {
+    dispatch({
+      type: 'SUBMIT_ANSWER',
+      questionIndex,
+      answerIndex,
+      isAnswerCorrect
+    });
+
+    await(sleep(3000)); // wait 3 seconds before moving to next question
+
+    dispatch({
+      type: 'SUBMIT_ANSWER_SUCCESS',
+      questionIndex
+    });
+  } catch (error) {
+    console.error(error);
+
+    dispatch({
+      type: 'SUBMIT_ANSWER_ERROR',
+      error
+    });
+  }
+};
+
+export const restartQuiz = () => ({
+  type: 'RESTART_QUIZ'
+});
+
+export const setNotification = notification => ({
+  type: 'SET_NOTIFICATION',
+  notification
+});

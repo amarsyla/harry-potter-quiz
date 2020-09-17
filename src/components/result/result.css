@@ -1,0 +1,9 @@
+.result {
+  text-align: center;
+}
+
+.result__icon {
+  display: block;
+  font-size: 4rem;
+}
+

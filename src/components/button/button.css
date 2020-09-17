@@ -1,0 +1,29 @@
+.button {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  padding: 1.2rem 2.4rem;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  border-radius: var(--border-radius-card);
+  color: inherit;
+  background-color: var(--color-theme);
+  cursor: pointer;
+  transition: all 0.3s var(--easing);
+}
+
+.button:hover {
+  background-color: rgba(var(--color-theme-rgb) / 0.6)
+}
+
+.button.is-success {
+  color: var(--color-text-success);
+  background-color: var(--color-success);
+}
+
+.button.is-error {
+  color: var(--color-text-error);
+  background-color: var(--color-error);
+}
